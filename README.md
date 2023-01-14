@@ -1,4 +1,3 @@
-<img src="Resources/Files/Ebla.png" alt="EBLA" style="display:block; margin-left:auto; margin-right:auto;"/>
 
 # RobotFramework-GEA
 Practicing [**Robot Framework**](https://robotframework.org/) using [**Browser Library**](https://marketsquare.github.io/robotframework-browser/Browser.html)  for **APIs** Test Automation.
