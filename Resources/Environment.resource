@@ -2,15 +2,18 @@
 # APPlication Under Test 
 ${ApplicationName}                          GEA-Web 
 ${Application_Module}                       Configuration   
-${Config_BaseURL}                           http://10.0.96.9:44350
-${login_serviceName}                        /ManagerLogin
+${host}                                    http://10.0.96.9:44350
+
+# Login 
+${login_serviceName}                        /managerlogin
 ${Content-Type}                              application/json
-# Login Credential
-${Username}                                 GEAweb_ManQA
+# Credential
+${Username}                                 config
 ${Password}                                 M@n0PwD
 
 # Active Directory Connection
-${LDAP}                                     LDAP://10.0.1.93
+${AD_serviceName}                        /api/config/ActiveDirectory
+${LDAPPath}                                  LDAP://10.0.1.93
 ${LDAPUSer}                                 administrator
 ${LDAPPWD}                                  P@ssw0rd
 

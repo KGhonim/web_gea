@@ -6,7 +6,19 @@ Library    JSONLibrary
 
 *** Keywords ***
 
+Set expectations
+    Expect response    { "status": { "enum": [200, 201, 204, 400] } }
+    Expect response    { "seconds": { "maximum": 1.5 } }
+    
 ############# Validations ############
+Validate That Response status code should Be Equal      
+        [Arguments]    ${response}    ${expectedValue}
+    Should Contain     ${response.status_code}    ${expectedValue}
+
+Validate That Response status Message should Be Equal
+    [Arguments]    ${response}    ${expectedValue}
+    Should Contain      ${response.json()}[status]    ${expectedValue}
+
 Validate That Response Body Contains Value    
     [Arguments]    ${response}    ${expectedValue}
     Should Contain    ${response.text}    ${expectedValue}
