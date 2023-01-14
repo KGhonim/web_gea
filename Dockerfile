@@ -18,7 +18,7 @@ WORKDIR /app
 
 # Run the test scripts when the container is launched
 
-#ENTRYPOINT ["robot"]
-CMD ["--outputdir", "/app/output", "/app/Tests"]
+ENTRYPOINT ["robot"]
+CMD ["--outputdir", "/app/Results", "/app/Tests"]
 
 

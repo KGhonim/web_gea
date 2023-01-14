@@ -13,7 +13,7 @@ User Login
 ## Get the access token
     Create Session  Login  ${host} 
     ${data}=    Evaluate    {'Username': (None, '${Username}'), 'Password': (None, '${Password}')}
-    ${response}=   Post Request     Login  ${login_serviceName}    files=${data}   
+    ${response}=   Post Request    Login  ${login_serviceName}    files=${data}   
     Log To Console  ${response.content}
     Should Be Equal As Strings    ${response.status_code}    200
  ## Set the access token as a session header to be set automatically with all the coming requests using the same alias (restfulBooker)
