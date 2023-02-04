@@ -30,16 +30,16 @@ Validate Response JSON Value
     Should Be Equal As Strings    ${value}[0]    ${expectedValue}
 
 
-Validate That The Booking is Created
+Validate That The connection is Created
     [Arguments]    ${expectedFirstName}    ${expectedLastName}
-    ${response}=    Get Booking    ${expectedFirstName}    ${expectedLastName}
+    ${response}=    Get connection    ${expectedFirstName}    ${expectedLastName}
     ${fn}=    Get Value From Json    ${response.json()}    $.firstname
     ${ln}=    Get Value From Json    ${response.json()}    $.lastname
     Run Keyword And Continue On Failure    Should Be Equal    ${fn}[0]    ${expectedFirstName}
     Run Keyword And Continue On Failure    Should Be Equal    ${ln}[0]    ${expectedLastName}
 
 
-Validate That Booking Does not Exist
+Validate That connection Does not Exist
     [Arguments]    ${firstName}    ${lastName}
-    ${response}=    Get Booking Ids    ${firstName}    ${lastName}
+    ${response}=    Get connection Ids    ${firstName}    ${lastName}
     Validate That Response Body Contains Value    ${response}    []

@@ -1,0 +1,9 @@
+{
+    "Library_Arabic_Name": "fn",
+    "Library_English_Name": "fn",
+    "ContentEngine": 1,
+    "RepoisteryType": 1,
+    "CE_URL": "{{CE_URL}}",
+    "CE_UserName": "{{CE_UserName}}",
+    "CE_Password": "{{CE_Password}}"
+}
