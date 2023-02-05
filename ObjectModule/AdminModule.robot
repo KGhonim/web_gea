@@ -1,7 +1,7 @@
 *** Settings ***
 Library    RequestsLibrary
 Library    JSONLibrary
-Resource    ../Resources/Environment.resource
+Resource   ../Configuration/Resources/Environment.resource
 
 
 *** Keywords ***

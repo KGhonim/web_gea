@@ -1,7 +1,9 @@
 *** Settings ***
 Library    RequestsLibrary
 Library    JSONLibrary
-Resource    ../Resources/Environment.resource
+Resource   ../Configuration/Resources/Environment.resource
+
+
 
 
 *** Keywords ***
@@ -54,7 +56,7 @@ Add Active Directory Connection
 Update Active Directory Connection
    [Arguments]    ${LDAPPath}    ${LDAPUSer}    ${LDAPPWD}
    ${data}=    Create Dictionary    LDAPPath=${LDAPPath}    LDAPUSer=${LDAPUSer}    LDAPPWD=${LDAPPWD} 
-   ${response}=    Post Request     Config_User   ${UpdateURL}    json=${data}
+   ${response}=    Post Request     Config_User   ${AD_Update}${AD}    json=${data}
    Should Be Equal As Strings       ${response.status_code}    200
    ##Log To Console  ${response.content}
 
@@ -77,9 +79,16 @@ Add New Active Directory Connection
 ######     Repository      ######
 
 Get list of Repository Connection
+    ${response}=    Post Request    Config_User  ${Repo_GetList}
+     Should Be Equal As Strings    ${response.status_code}    200
+   ##Log To Console  ${response.content}
 
-Check FN Repository Connection
+Check FN Repository Connection with Body as JSON File
 
+    [Arguments]    ${filePath}
+    ${jsonBody}=    Load Json From File    ${EXECDIR}${filePath}
+    ${response}=    POST On Session    restfulBooker    ${booking_serviceName}    json=${jsonBody}
+    [Return]    ${response}
 
 Add FN Repository Connection
 
