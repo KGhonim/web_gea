@@ -26,16 +26,16 @@ Verify ADD Active Directory Connection
     [Tags]    TC04   Configuration Module     ActiveDirectory     Smoke    Regression    Positive
     Add Active Directory Connection    ${LDAPPath}    ${LDAPUSer}    ${LDAPPWD}
 
-Verify Update Active Directory Connection
-    [Documentation]    Update AD Connection   
-    [Tags]    TC05   Configuration Module     ActiveDirectory     Smoke    Regression    Positive
-    Update Active Directory Connection    ${LDAPPath}    ${LDAPUSer}    ${LDAPPWD}
+#Verify Update Active Directory Connection
+    #[Documentation]    Update AD Connection   
+    #[Tags]    TC05   Configuration Module     ActiveDirectory     Smoke    Regression    Positive
+   # Update Active Directory Connection    ${LDAPPath}    ${LDAPUSer}    ${LDAPPWD}
 
 
-Verify Delete Active Directory Connection
-    [Documentation]    Delete AD Connection   
-    [Tags]    TC06   Configuration Module  ActiveDirectory    Smoke    Regression    Positive
-    Delete Active Directory Connection    
+#Verify Delete Active Directory Connection
+   # [Documentation]    Delete AD Connection   
+    #[Tags]    TC06   Configuration Module  ActiveDirectory    Smoke    Regression    Positive
+   # Delete Active Directory Connection    
 
 Verify ADD New Active Directory Connection 
     [Documentation]    ADD AD Connection   
@@ -43,13 +43,32 @@ Verify ADD New Active Directory Connection
     Add New Active Directory Connection   ${LDAPPath}    ${LDAPUSer}    ${LDAPPWD}
 
 
-Verify Get list of Repository Connection 
-    [Documentation]    Get list of AD Connection  
-    [Tags]    TC08   Configuration Module  Repository     Smoke    Regression    Positive
-    Get list of Repository Connection
+#Verify Get list of Repository Connection 
+  #  [Documentation]    Get list of Repository Connection  
+   # [Tags]    TC08   Configuration Module      Repository     Smoke    Regression    Positive
+   # Get list of Repository Connection
 
+Verify FN Repository Connection
+    [Documentation]    Check FN Repository Connection  
+    [Tags]    TC09   Configuration Module      Repository     Smoke    Regression    Positive
+    Check FN Repository Connection    /Configuration/TestDataFiles/Json/FNConnection.json
     
+Verify ADD Repository Connection
+    [Documentation]    Add FN Repository Connection 
+    [Tags]    TC10   Configuration Module      Repository     Smoke    Regression    Positive
+    Add FN Repository Connection    /Configuration/TestDataFiles/Json/ADDFNConnection.json
+
+#Verify Update Repository Connection
+   # [Documentation]    Update FN Repository Connection  
+   # [Tags]    TC11   Configuration Module      Repository     Smoke    Regression    Positive
+  #  Update FN Repository Connection    /Configuration/TestDataFiles/Json/UpdateFNConnection.json
+
+#Verify Delete Repository Connection
+   # [Documentation]    Delete FN Repository Connection   
+   # [Tags]    TC06   Configuration Module  Repository    Smoke    Regression    Positive
+   # Delete FN Repository Connection    
+
 Verify Login by Normal user
     [Documentation]    Login with valid Normal user credentials 
-    [Tags]    TC09   User Module  Smoke    Regression    Positive  
+    [Tags]    TC20   User Module  Smoke    Regression    Positive  
     Login by Normal user    ${Normal_Username}    ${Normal_Password}

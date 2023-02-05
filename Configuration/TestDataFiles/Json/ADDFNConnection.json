@@ -1,0 +1,17 @@
+{
+    "En_Name": "fn",
+    "Ar_Name": "fn",
+    "AD_ID": "${AD}",
+    "CE_Type": 1,
+    "CE_URL": "http://10.0.190.192:9080/wsi/FNCEWS40MTOM",
+    "CE_UserName": "administrator",
+    "CE_Password": "Ebla1234",
+    "Object_Strore_List": [
+        {
+            "title": "YPA"
+        },
+        {
+            "title": "CAITOS"
+        }
+    ]
+}
