@@ -6,21 +6,19 @@
 trigger:
 - master
 
+pool:
+  name: Build-Pool
+  
+variables:
+  python.version: '3.11'
+
 jobs:
 
-- job: 'Test'
-
-  strategy:
-    matrix:
-      Python37:
-        python.version: '3.7'
-    maxParallel: 1
-
-  steps:
-  - task: UsePythonVersion@0
-    inputs:
-      versionSpec: '$(python.version)'
-      architecture: 'x64'
+steps:
+- task: UsePythonVersion@0
+  displayName: 'Use Python $(python.version)'
+  inputs:
+    versionSpec: '$(python.version)'
 
   - script: pip install robotframework robotframework-seleniumlibrary && npm install chromedriver
     displayName: 'Install dependencies'

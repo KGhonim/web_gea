@@ -83,23 +83,23 @@ Check FN Repository Connection
     ${jsonBody}=    Load Json From File    ${EXECDIR}${filePath}
     ${response}=    Post Request    Config_User    ${Repo_Connection}    json=${jsonBody}
     Should Be Equal As Strings    ${response.status_code}    200
-    Log To Console  ${response.content}
+    ##Log To Console  ${response.content}
 
 Add FN Repository Connection
     [Arguments]    ${filePath}
     ${jsonBody}=    Load Json From File    ${EXECDIR}${filePath}
     ${response}=    Post Request    Config_User    ${Repo_AddConnection}    json=${jsonBody}
     Should Be Equal As Strings    ${response.status_code}    200
-    Log To Console  ${response.content}
+    ##Log To Console  ${response.content}
 
 
 Get list of Repository Connection
     ${response}=    Post Request    Config_User  ${Repo_GetList}
      Should Be Equal As Strings    ${response.status_code}    200
    ##Log To Console  ${response.content}
-   ${RepoID}    Set Variable    ${response.json()}[data.RepoID]
-    Log To Console  The RepoID value is : ${RepoID}
-   ${DeleterepoURL}    Set Variable    ${Repo_Delete}${RepoID}
+   #${RepoID}    Set Variable    ${response.json()}[data.RepoID]
+    ##Log To Console  The RepoID value is : ${RepoID}
+   #${DeleterepoURL}    Set Variable    ${Repo_Delete}${RepoID}
    #Log To Console  The DeleteURL value is : ${DeleterepoURL}
 
 Update FN Repository Connection

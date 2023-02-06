@@ -34,7 +34,7 @@ ${FCE}                                      http://10.0.190.192:9080/wsi/FNCEWS4
 ${FCE_UserName}                             administrator
 ${FCE_Password}                             Ebla1234
 
-
+${Set_Password}                             /api/config/SetAdminPassword
 ################################## User ##################################33#
 # APPlication Under Test 
 ${ApplicationName}                          GEA-Web 
@@ -51,14 +51,22 @@ ${Normal_Password}                                Test.123
 
 ################################## Admin ##################################33#
 # APPlication Under Test 
-${ApplicationName}                          GEA-Web 
-${Application_Module}                       Admin   
-${Config_host}                              http://10.0.96.9:44350
+${ApplicationName}                         GEA-Web 
+${Application_Module}                      Admin   
+${Admin_host}                              http://10.0.96.9:44350
 
 #  Login 
-${Adminlogin_serviceName}                        /UserLogin
-${Content-Type}                              application/json
+${Adminlogin_serviceName}                        /managerlogin
+${Content-Type}                                  application/json
 # Credential
-${Admin.Username}                                 299000299000
-${Admin.Password}                                 Test.123
+${Admin_Username}                                 config
+${Admin_Password}                                 M@n0PwD
 
+# Users
+${get_Users}                              /api/Admin/GetAllUsersList
+${ADD_User}                               /api/Admin/SaveUser
+${Search_Users}                           /api/Admin/SearchForUsers
+${Update_User}                            /api/Admin/UpdateUser
+${Inactive}                               /api/Admin/GetAllInactiveUsers
+${UserPermissions}                        /api/GetUserPermissions
+${UserPermissions}                        /api/User/LoadUserData

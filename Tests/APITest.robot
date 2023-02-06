@@ -43,10 +43,10 @@ Verify ADD New Active Directory Connection
     Add New Active Directory Connection   ${LDAPPath}    ${LDAPUSer}    ${LDAPPWD}
 
 
-#Verify Get list of Repository Connection 
-  #  [Documentation]    Get list of Repository Connection  
-   # [Tags]    TC08   Configuration Module      Repository     Smoke    Regression    Positive
-   # Get list of Repository Connection
+Verify Get list of Repository Connection 
+   [Documentation]    Get list of Repository Connection  
+    [Tags]    TC08   Configuration Module      Repository     Smoke    Regression    Positive
+   Get list of Repository Connection
 
 Verify FN Repository Connection
     [Documentation]    Check FN Repository Connection  
@@ -65,8 +65,25 @@ Verify ADD Repository Connection
 
 #Verify Delete Repository Connection
    # [Documentation]    Delete FN Repository Connection   
-   # [Tags]    TC06   Configuration Module  Repository    Smoke    Regression    Positive
+   # [Tags]    TC12   Configuration Module  Repository    Smoke    Regression    Positive
    # Delete FN Repository Connection    
+
+Verify Login by admin user
+    [Documentation]    Login with valid Admin user credentials 
+    [Tags]    TC14   Admin Module  Smoke    Regression    Positive  
+    Login by Admin user    ${Admin_Username}    ${Admin_Password} 
+
+
+Verify Get list of users 
+    [Documentation]    Get list of users   
+    [Tags]    TC15   Admin Module  Users     Smoke    Regression    Positive
+    Get list of users 
+
+Verify Get Inactive list of users 
+    [Documentation]    Get list of users   
+    [Tags]    TC16   Admin Module  Users     Smoke    Regression    Positive
+    Get Inactive list of users 
+
 
 Verify Login by Normal user
     [Documentation]    Login with valid Normal user credentials 
