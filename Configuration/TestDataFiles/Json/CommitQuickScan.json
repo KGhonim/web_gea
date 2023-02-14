@@ -1,0 +1,58 @@
+{
+    "documentID": "4f761722-4f77-4332-8e6a-7d3433a3102f",
+    "classID": "4195c995-9e90-4865-9e31-068c14038d0c",
+    "documentName": "1675773433065",
+    "attachmentMetadata": {
+      "length": 1,
+      "DocumentID": "4f761722-4f77-4332-8e6a-7d3433a3102f",
+      "order": [
+        {
+          "attachmentID": "d5e1ec5e-0b94-49dc-8ca2-66832f28101e",
+          "PageNo": 1
+        }
+      ]
+    },
+    "documentMetadata": [
+      {
+        "Name": "DocumentTitle",
+        "value": [
+          "Test "
+        ],
+        "Datatype": "STRING",
+        "Cardinality": "SINGLE"
+      },
+      {
+        "Name": "employeename",
+        "value": [
+          "Test "
+        ],
+        "Datatype": "STRING",
+        "Cardinality": "SINGLE"
+      },
+      {
+        "Name": "Employee_Address",
+        "value": [
+          "Test "
+        ],
+        "Datatype": "STRING",
+        "Cardinality": "SINGLE"
+      },
+      {
+        "Name": "employeenumber",
+        "value": [
+          453453
+        ],
+        "Datatype": "LONG",
+        "Cardinality": "SINGLE"
+      },
+      {
+        "Name": "Employee_Joining_Date",
+        "value": [
+          "2023-02-02T12:00:00+03:00"
+        ],
+        "Datatype": "DATE",
+        "Cardinality": "SINGLE"
+      }
+    ],
+    "commitFileType": "PDF"
+  }

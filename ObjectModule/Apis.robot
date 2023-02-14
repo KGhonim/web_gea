@@ -12,7 +12,7 @@ Set expectations
     
 ############# Validations ############
 Validate That Response status code should Be Equal      
-        [Arguments]    ${response}    ${expectedValue}
+        [Arguments]    ${response}               ${expectedValue}
     Should Contain     ${response.status_code}    ${expectedValue}
 
 Validate That Response status Message should Be Equal

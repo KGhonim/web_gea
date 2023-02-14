@@ -84,8 +84,27 @@ Verify Get Inactive list of users
     [Tags]    TC16   Admin Module  Users     Smoke    Regression    Positive
     Get Inactive list of users 
 
-
+########################## User Test Cases  ############################3
 Verify Login by Normal user
     [Documentation]    Login with valid Normal user credentials 
     [Tags]    TC20   User Module  Smoke    Regression    Positive  
     Login by Normal user    ${Normal_Username}    ${Normal_Password}
+
+
+Verify Save QuickScan Attachment
+    [Documentation]    Save Quick Scan Attachment 
+    [Tags]    TC10   User Module        Smoke    Regression    Positive
+    Save Quick Scan Attachment    /Configuration/TestDataFiles/Json/SaveQuickScanAttachment.json
+
+
+
+# #Verify Comit QuickScan Documents
+#     [Documentation]    Commit Quick Scan 
+#     [Tags]    TC10   User Module         Smoke    Regression    Positive
+#     Commit Quick Scan    /Configuration/TestDataFiles/Json/CommitQuickScan.json
+
+
+# Verify Save Quick Uplaod Attachment
+#     [Documentation]    Save Quick Uplaod Attachment 
+#     [Tags]    TC10   User Module        Smoke    Regression    Positive
+#     Save Quick Uplaod Attachment    /Configuration/TestDataFiles/Json/SaveQuickScanAttachment.json

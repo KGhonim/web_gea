@@ -48,6 +48,15 @@ ${Content-Type}                                  application/json
 ${Normal_Username}                                299000299000
 ${Normal_Password}                                Test.123
 
+### Quick Scan 
+
+${Saveattachment}                              /SaveDirectScanAttachment
+${CommitQuickScan}                              /CommitQuickScanDocument 
+
+### Quick Upload 
+${UploadFastDocument}                           /UploadFastDocument
+${CommitFastDocument}                            /CommitFastDocument?input=f1bc234f-dcc6-4252-b84a-1eec0e617901
+
 
 ################################## Admin ##################################33#
 # APPlication Under Test 
