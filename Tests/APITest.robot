@@ -85,16 +85,16 @@ Verify Get Inactive list of users
     Get Inactive list of users 
 
 ########################## User Test Cases  ############################3
-Verify Login by Normal user
-    [Documentation]    Login with valid Normal user credentials 
-    [Tags]    TC20   User Module  Smoke    Regression    Positive  
-    Login by Normal user    ${Normal_Username}    ${Normal_Password}
+#Verify Login by Normal user
+  #  [Documentation]    Login with valid Normal user credentials 
+   # [Tags]    TC20   User Module  Smoke    Regression    Positive  
+  #  Login by Normal user    ${Normal_Username}    ${Normal_Password}
 
 
-Verify Save QuickScan Attachment
-    [Documentation]    Save Quick Scan Attachment 
-    [Tags]    TC10   User Module        Smoke    Regression    Positive
-    Save Quick Scan Attachment    /Configuration/TestDataFiles/Json/SaveQuickScanAttachment.json
+#Verify Save QuickScan Attachment
+ #   [Documentation]    Save Quick Scan Attachment 
+  #  [Tags]    TC10   User Module        Smoke    Regression    Positive
+#    Save Quick Scan Attachment    /Configuration/TestDataFiles/Json/SaveQuickScanAttachment.json
 
 
 

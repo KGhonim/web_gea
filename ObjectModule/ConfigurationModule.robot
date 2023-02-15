@@ -101,12 +101,12 @@ Get list of Repository Connection
     ##Log To Console  The RepoID value is : ${RepoID}
    #${DeleterepoURL}    Set Variable    ${Repo_Delete}${RepoID}
    #Log To Console  The DeleteURL value is : ${DeleterepoURL}
-
 Update FN Repository Connection
     [Arguments]    ${filePath}
     ${jsonBody}=    Load Json From File    ${EXECDIR}${filePath}
     ${response}=    Post Request    Config_User    ${Repo_Update}    json=${jsonBody}
     Should Be Equal As Strings    ${response.status_code}    200
+
     #Log To Console  ${response.content}
 
 
