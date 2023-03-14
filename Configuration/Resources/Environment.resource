@@ -2,25 +2,30 @@
 # APPlication Under Test 
 ${ApplicationName}                          GEA-Web 
 ${Application_Module}                       Configuration   
-${Config_host}                               http://10.0.96.9:44350
+${Config_host}                              http://10.0.96.9:44350
+
 
 ################################## Configuration ##################################33#
 #  Login 
-${Configlogin_serviceName}                        /managerlogin
-${Content-Type}                              application/json
+${Configlogin_serviceName}                        /AdminLogin
+${Content-Type}                                   application/json
 # Credential
-${Config_Username}                                 config
+${Config_Username}                                 GEAweb_Manager
 ${Config_Password}                                 M@n0PwD
 
 # Active Directory Connection
-${AD_Connection}                          /api/config/ActiveDirectory
-${AD_AddConnection}                       /api/config/SaveActiveDirectory
-${AD_GetList}                             /api/config/GetAD_List
-${AD_Update}                              /api/config/UpdateActiveDirectory?AD_ID=
-${AD_Delete}                              /api/config/DeleteActiveDirectory?AD_ID=
-${LDAPPath}                               LDAP://10.0.1.93
+${AD_Connection}                          /api/config/AD/check
+${AD_AddConnection}                       /api/config/AD
+${AD_GetList}                             /api/config/AD
+${AD_Update}                              /api/config/AD?AD_ID=
+${AD_Delete}                              /api/config/AD?AD_ID=
+
+
+${LDAPPath}                               LDAP://10.0.190.191
+${LDAPPath1}                              LDAP://10.0.88.1
+
 ${LDAPUSer}                                administrator
-${LDAPPWD}                                 P@ssw0rd
+${LDAPPWD}                                 Ebla1234
 
 # Repo Connection
 ${Repo_Connection}                          /api/config/RepositoryConnection
@@ -31,10 +36,16 @@ ${Repo_Delete}                              /api/config/DeleteRepository?Repo_ID
 
 
 ${FCE}                                      http://10.0.190.192:9080/wsi/FNCEWS40MTOM
-${FCE_UserName}                             administrator
+${FCE_UserName}                             p8admin
 ${FCE_Password}                             Ebla1234
 
-${Set_Password}                             /api/config/SetAdminPassword
+
+# Super users
+${Search_user}                             /api/Admin/SearchForUsers
+${ADD_user}                                /api/user/super
+${ADD_user}                                /api/user/super?userID=
+
+
 ################################## User ##################################33#
 # APPlication Under Test 
 ${ApplicationName}                          GEA-Web 
@@ -65,8 +76,8 @@ ${Application_Module}                      Admin
 ${Admin_host}                              http://10.0.96.9:44350
 
 #  Login 
-${Adminlogin_serviceName}                        /managerlogin
-${Content-Type}                                  application/json
+${Adminlogin_serviceName}                  /managerlogin
+${Content-Type}                            application/json
 # Credential
 ${Admin_Username}                                 config
 ${Admin_Password}                                 M@n0PwD

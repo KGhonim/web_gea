@@ -18,36 +18,36 @@ Login by config user
     ##Log To Console  ${response.content}
     Should Be Equal As Strings    ${response.status_code}    200
  ## Set the access token as a session header to be set automatically with all the coming requests using the same alias (restfulBooker)
-    ${token}=    Set Variable    ${response.json()}[Token]
+    ${token}=    Set Variable    ${response.json() ['data']['Token']}
     ${headers}=    Create Dictionary    Authorization=Bearer ${token}
     ${headers}=    Create dictionary    Content-Type=application/json    Authorization=Bearer ${token}   
     Create Session    Config_User   ${Config_host}    headers=${headers}
-    ##Log To Console     The token value is : ${token}
+    #Log To Console     The token value is : ${token}
 
 
 ######     AD Connection      ######
 
 Get list of Active Directory Connection
-    ${response}=    Post Request    Config_User  ${AD_GetList}
+    ${response}=    Get Request    Config_User  ${AD_GetList}
      Should Be Equal As Strings    ${response.status_code}    200
-   ##Log To Console  ${response.content}
+    #Log To Console  ${response.content}
 
 Check Active Directory Connection
    [Arguments]    ${LDAPPath}    ${LDAPUSer}    ${LDAPPWD}
    ${data}=    Create Dictionary    LDAPPath=${LDAPPath}    username=${LDAPUSer}    password=${LDAPPWD} 
    ${response}=    Post Request   Config_User   ${AD_Connection}     json=${data}
    Should Be Equal As Strings    ${response.status_code}    200
-   ##Log To Console  ${response.content}
+   #Log To Console  ${response.content}
 
 Add Active Directory Connection
    [Arguments]    ${LDAPPath}    ${LDAPUSer}    ${LDAPPWD}
    ${data}=    Create Dictionary    LDAPPath=${LDAPPath}    LDAPUSer=${LDAPUSer}    LDAPPWD=${LDAPPWD} 
    ${response}=    Post Request   Config_User   ${AD_AddConnection}     json=${data}
    Should Be Equal As Strings    ${response.status_code}    200
-   #Log To Console  ${response.content}
+   Log To Console  ${response.content}
    ## Set the created AD ID as avariable to be set automatically with all the coming requests using the same alias (restfulBooker)
    ${AD}    Set Variable    ${response.json()['data']}
-   #Log To Console  The AD value is : ${AD}
+   Log To Console  The AD value is : ${AD}
    ${UpdateURL}    Set Variable    ${AD_Update}${AD}
    #Log To Console  The UpdateURL value is : ${UpdateURL}
    ${DeleteURL}    Set Variable    ${AD_Delete}${AD}
